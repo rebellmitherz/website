@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebellsystem · Verkaufsstarke Websites für Dienstleister</title>
+<meta name="description" content="Wir bauen verkaufsstarke Websites für Dienstleister — schnell, zum fairen Festpreis. Seiten, die Besucher zu Anfragen machen. Auch Relaunch bestehender Seiten.">
+
+<!-- Offen: Calendly-Link ist gesetzt. Optional: Festpreis-Anker in FAQ/Preis-Block ergaenzen.
+     Telefon im Footer (0151 28141644 aus Bot-Signatur) bestaetigen oder entfernen. -->
+
+<style>
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.woff2') format('woff2')}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/inter-700.woff2') format('woff2')}
+</style>
+<style>
+  :root{
+    --bg:#0c0f12; --bg2:#0a0d10; --surface:#14181d; --surface2:#181d23;
+    --border:#252c34; --text:#e9edf0; --muted:#9aa3ac; --muted2:#6f7882;
+    --accent:#3fcf8e; --accent-hover:#34b87d; --accent-ink:#07120c;
+    --radius:14px; --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 26px;border-radius:12px;transition:.18s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{padding:11px 20px;font-size:15px}
+  header{position:sticky;top:0;z-index:50;background:rgba(12,15,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-weight:700;font-size:20px;letter-spacing:-.02em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a.txt{color:var(--muted);font-size:15px;font-weight:500;transition:.15s}
+  .nav-links a.txt:hover{color:var(--text)}
+  .hero{padding:88px 0 76px;text-align:center;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:760px;height:760px;background:radial-gradient(circle,rgba(63,207,142,.10),transparent 62%);pointer-events:none}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(63,207,142,.10);border:1px solid rgba(63,207,142,.25);padding:7px 15px;border-radius:999px;margin-bottom:26px;position:relative}
+  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.07;font-weight:700;letter-spacing:-.025em;max-width:880px;margin:0 auto 24px;position:relative}
+  .sub{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:680px;margin:0 auto 38px;position:relative}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+  .trust{margin-top:26px;font-size:14px;color:var(--muted2);position:relative}
+  section{padding:74px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 50px}
+  h2{font-size:clamp(27px,3.6vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:16px}
+  .sec-head p{color:var(--muted);font-size:17px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+  .card .ic{width:44px;height:44px;border-radius:11px;background:rgba(63,207,142,.10);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+  .card h3{font-size:18px;font-weight:600;margin-bottom:9px}
+  .card p{color:var(--muted);font-size:15px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;position:relative}
+  .step .n{counter-increment:s;font-size:13px;font-weight:700;color:var(--accent-ink);background:var(--accent);width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step .n:before{content:counter(s)}
+  .step h3{font-size:17px;font-weight:600;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:14.5px}
+  .result{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;margin-top:34px}
+  .result strong{color:var(--accent)}
+  .result .big{font-size:clamp(20px,2.6vw,26px);font-weight:600;letter-spacing:-.01em}
+  .aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .aud .row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:16px 18px;font-size:15.5px;font-weight:500}
+  .aud .row .dot{color:var(--accent);font-size:18px}
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 22px;transition:.15s}
+  details[open]{border-color:var(--accent)}
+  summary{cursor:pointer;list-style:none;font-weight:600;font-size:16.5px;padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{color:var(--accent);transition:.2s;font-size:20px}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details p{color:var(--muted);font-size:15.5px;padding:0 0 20px}
+  .final{text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--border)}
+  .final h2{margin-bottom:18px}
+  .final p{color:var(--muted);font-size:18px;max-width:560px;margin:0 auto 34px}
+  footer{border-top:1px solid var(--border);padding:46px 0;background:var(--bg2)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .foot .brand{font-weight:700;font-size:18px}
+  .foot .brand span{color:var(--accent)}
+  .foot .meta{color:var(--muted2);font-size:14px;line-height:1.9}
+  .foot .meta a:hover{color:var(--accent)}
+  .foot-links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .foot-links a:hover{color:var(--accent)}
+  @media(max-width:640px){
+    section{padding:54px 0}.hero{padding:60px 0 50px}
+    .nav-links .txt{display:none}.cta-row .btn{width:100%;justify-content:center}
+    .foot{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">Rebell<span>system</span></div>
+    <div class="nav-links">
+      <a class="txt" href="#leistung">Leistung</a>
+      <a class="txt" href="#ablauf">Ablauf</a>
+      <a class="txt" href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm" href="https://calendly.com/rebellsystem/rebellsystem">Erstgespräch buchen</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Websites für Dienstleister</span>
+    <h1>Eine Website, die verkauft — schnell und günstig.</h1>
+    <p class="sub">Viele Dienstleister haben eine Website, die einfach nur „da ist". Wir bauen Seiten, die Besucher zu Anfragen machen — verkaufsstark aufgebaut, in kurzer Zeit, zum fairen Festpreis.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendly.com/rebellsystem/rebellsystem">Kostenloses Erstgespräch buchen →</a>
+      <a class="btn btn-ghost" href="#ablauf">So funktioniert's</a>
+    </div>
+    <div class="trust">Für Dienstleister, Berater, Handwerk &amp; lokale Anbieter</div>
+  </div>
+</section>
+
+<div class="band">
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Das Problem</div>
+      <h2>Eine schöne Website ist noch kein Verkäufer.</h2>
+      <p>Die meisten Seiten von Dienstleistern sehen okay aus — bringen aber keine Anfragen.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">✕</div><h3>Sie verkauft nicht</h3><p>Hübsch, aber ohne klare Struktur, ohne Beweis, ohne Handlungsaufforderung — Besucher springen ab.</p></div>
+      <div class="card"><div class="ic">€</div><h3>Agenturen sind teuer &amp; langsam</h3><p>Monate Wartezeit und vierstellige Rechnungen — für etwas, das am Ende trotzdem nicht konvertiert.</p></div>
+      <div class="card"><div class="ic">⚙</div><h3>Baukasten-Chaos</h3><p>Selbstgebastelt im Baukasten: viel Zeit verloren, technisch wackelig, strategisch planlos.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="leistung">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Was du bekommst</div>
+      <h2>Verkaufsstark, schnell, fairer Festpreis.</h2>
+      <p>Keine Spielerei — eine Seite, die ein Ziel hat: aus Besuchern Anfragen machen.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">◆</div><h3>Verkaufs-Struktur</h3><p>Headline → Problem → Lösung → Beweis → klarer Call-to-Action. Aufgebaut wie ein Verkaufsgespräch.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Schnell live</h3><p>In Tagen statt Monaten. Kein endloses Hin und Her — klarer Ablauf, schnelles Ergebnis.</p></div>
+      <div class="card"><div class="ic">✓</div><h3>Fairer Festpreis</h3><p>Klare, günstige Pauschale statt Überraschungs-Rechnung. Du weißt vorher, was es kostet.</p></div>
+      <div class="card"><div class="ic">↗</div><h3>Auf Anfragen optimiert</h3><p>Mobil schnell, sauber, DSGVO-bewusst, mit Termin-/Kontakt-CTA — bereit, Leads zu bringen.</p></div>
+    </div>
+    <div class="result">
+      <p class="big">Ergebnis: eine Seite, die <strong>arbeitet</strong> — statt nur online zu sein.</p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+<section id="ablauf">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">So läuft's ab</div>
+      <h2>In drei Schritten zur neuen Seite.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n"></div><h3>Kurzes Gespräch</h3><p>Wir klären dein Angebot, deine Wunschkunden und das Ziel der Seite. Du lieferst Texte/Logo, wo vorhanden.</p></div>
+      <div class="step"><div class="n"></div><h3>Wir bauen</h3><p>Wir setzen die Seite in Verkaufs-Struktur um — schnell, mobil, sauber. Eine Korrekturschleife inklusive.</p></div>
+      <div class="step"><div class="n"></div><h3>Du gehst live</h3><p>Seite geht online, fertig für Anfragen. Auf Wunsch kümmern wir uns auch um Domain &amp; Hosting.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="fuer-wen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Für wen</div>
+      <h2>Passt, wenn deine Seite mehr leisten soll.</h2>
+    </div>
+    <div class="aud">
+      <div class="row"><span class="dot">●</span>Dienstleister &amp; lokale Anbieter</div>
+      <div class="row"><span class="dot">●</span>Berater, Coaches &amp; Agenturen</div>
+      <div class="row"><span class="dot">●</span>Handwerk &amp; Selbstständige</div>
+      <div class="row"><span class="dot">●</span>Neue Seite oder Relaunch bestehender</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="result" style="margin-top:0">
+      <p class="big">Schon eine Website? <strong>Kostenloser Quick-Check.</strong></p>
+      <p style="color:var(--muted);margin-top:10px">Wir schauen im Erstgespräch ehrlich drauf und sagen dir, was verkauft — und was nicht.</p>
+      <div style="margin-top:22px"><a class="btn btn-primary" href="https://calendly.com/rebellsystem/rebellsystem">Quick-Check buchen →</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2>Häufige Fragen.</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Was kostet eine Website? <span class="chev">⌄</span></summary><p>Fairer Festpreis je nach Umfang — in aller Regel deutlich günstiger und schneller als eine klassische Agentur. Die konkrete Zahl nennen wir transparent im kostenlosen Erstgespräch, sobald wir den Umfang kennen.</p></details>
+      <details><summary>Wie schnell ist die Seite fertig? <span class="chev">⌄</span></summary><p>Deutlich schneller als üblich — oft in wenigen Tagen statt Monaten, sobald Texte und Bilder vorliegen. Den realistischen Zeitrahmen für dein Projekt legen wir im Erstgespräch fest.</p></details>
+      <details><summary>Was muss ich liefern? <span class="chev">⌄</span></summary><p>So wenig wie möglich: dein Angebot, ein paar Eckdaten und vorhandene Texte/Bilder/Logo. Fehlt etwas, helfen wir bei Struktur und Formulierung.</p></details>
+      <details><summary>Übernehmt ihr auch eine bestehende Seite? <span class="chev">⌄</span></summary><p>Ja. Wir machen einen Relaunch oder bauen die Seite verkaufsstark neu auf — und im Erstgespräch gibt's einen kostenlosen Quick-Check deiner aktuellen Seite.</p></details>
+      <details><summary>Was ist mit Domain &amp; Hosting? <span class="chev">⌄</span></summary><p>Auf Wunsch übernehmen wir Einrichtung von Domain und Hosting komplett, damit du dich um nichts Technisches kümmern musst. Was genau du brauchst, klären wir im Gespräch.</p></details>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Bereit für eine Seite, die verkauft?</h2>
+    <p>Buch dir ein kostenloses Erstgespräch. Wir schauen, was deine Website leisten soll — und was sie kostet.</p>
+    <a class="btn btn-primary" href="https://calendly.com/rebellsystem/rebellsystem">Jetzt Erstgespräch buchen →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand">Rebell<span>system</span></div>
+      <div class="meta">Verkaufsstarke Websites für Dienstleister</div>
+    </div>
+    <div class="meta">
+      <a href="mailto:emilio@rebellsystem.com">emilio@rebellsystem.com</a><br>
+      <a href="tel:+4915128141644">0151 28141644</a>
+    </div>
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://b2b.rebellsystem.com">b2b.rebellsystem.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
