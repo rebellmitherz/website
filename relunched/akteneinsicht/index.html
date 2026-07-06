@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akteneinsicht PRO — Rebell mit Herz</title>
+<meta name="description" content="Akteneinsicht beim Jugendamt & Gericht: Die komplette Vorlage mit DSGVO-Strategie. Transparenz erzwingen, Manipulationen erkennen, Verfahrensdominanz sichern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0f12; --bg2:#0a0d10; --surface:#14181d; --surface2:#181d23;
+    --border:#252c34; --text:#e9edf0; --muted:#9aa3ac; --muted2:#6f7882;
+    --accent:#3fcf8e; --accent-hover:#34b87d; --accent-ink:#07120c;
+    --danger:#e0556a; --warn:#f0a63b;
+    --radius:14px; --maxw:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.15}
+  h1{font-size:clamp(32px,5vw,52px);font-weight:800}
+  h2{font-size:clamp(24px,3.5vw,34px);font-weight:700;margin-bottom:16px}
+  h3{font-size:19px;font-weight:600;margin-bottom:8px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 28px;border-radius:12px;transition:.18s;cursor:pointer;border:none}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(12,15,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:700;font-size:18px}.logo span{color:var(--accent)}
+
+  .hero{padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(63,207,142,.12),transparent 60%);pointer-events:none}
+  .hero .badge{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(63,207,142,.10);border:1px solid rgba(63,207,142,.25);padding:6px 14px;border-radius:999px;margin-bottom:22px;position:relative}
+  .hero h1{max-width:750px;margin:0 auto 20px;position:relative}
+  .hero .sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 32px;position:relative}
+  .hero .price{font-size:28px;font-weight:700;margin:12px 0 4px}
+  .hero .price-note{font-size:14px;color:var(--muted2)}
+
+  section{padding:64px 0}
+  .band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+  .card .icon{font-size:28px;margin-bottom:14px}
+  .card h3{font-size:18px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .checklist{list-style:none;padding:0}
+  .checklist li{padding:10px 0 10px 32px;position:relative;color:var(--muted);font-size:15.5px;border-bottom:1px solid var(--border)}
+  .checklist li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .checklist li:last-child{border-bottom:none}
+
+  .strategy-box{background:var(--surface2);border:1px solid var(--accent);border-radius:var(--radius);padding:24px 28px;margin:20px 0}
+  .strategy-box .label{color:var(--accent);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:600px){.twocol{grid-template-columns:1fr}}
+
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 20px;margin-bottom:10px}
+  .faq details[open]{border-color:var(--accent)}
+  .faq summary{cursor:pointer;font-weight:600;font-size:16px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .chev{color:var(--accent);transition:.2s}
+  .faq details[open] summary .chev{transform:rotate(180deg)}
+  .faq details p{color:var(--muted);font-size:15px;padding:0 0 18px}
+
+  .cta-section{text-align:center;padding:60px 0}
+  .cta-card{background:linear-gradient(135deg,var(--surface2),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:44px 28px;max-width:600px;margin:0 auto}
+  .cta-card h2{margin-bottom:12px}
+  .cta-card p{color:var(--muted);margin-bottom:24px}
+
+  .disclaimer{background:rgba(224,85,106,.08);border:1px solid rgba(224,85,106,.25);border-radius:var(--radius);padding:18px 22px;margin:32px 0;font-size:14px;color:var(--muted)}
+  .disclaimer strong{color:var(--danger)}
+
+  footer{border-top:1px solid var(--border);padding:36px 0;text-align:center;font-size:14px;color:var(--muted2)}
+  footer a{color:var(--muted);margin:0 12px}
+
+  @media print{
+    body{background:white;color:black}
+    .btn{display:none}
+    .hero:before{display:none}
+    .band{background:#f5f5f5;border-color:#ddd}
+    .card,.strategy-box,.cta-card{background:white;border:1px solid #ddd;box-shadow:none}
+    header,footer,.disclaimer{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Rebell <span>mit Herz</span></a>
+    <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px">Download</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge">Nr. 1 Bestseller</div>
+    <h1>Deine Akte. Dein Recht. <br>Deine Waffe.</h1>
+    <p class="sub">Das Jugendamt führt eine Akte über dich und dein Kind. Berichte, Vermerke, Mails — alles, was je über dich geschrieben wurde. Vieles davon ist falsch oder einseitig. Und es wird zur Grundlage für Entscheidungen über dein Kind.</p>
+    <p class="sub">Diese Vorlage zwingt Transparenz. Rechtlich sauber. Strategisch klug. Eskalationsfähig.</p>
+    <div class="price">9,95€</div>
+    <div class="price-note">Einmalzahlung. Sofort-Download. 14 Tage "Passt nicht? Geld zurück."</div>
+    <div style="margin-top:22px">
+      <a href="#download" class="btn btn-primary">Vorlage herunterladen →</a>
+      <a href="#inhalt" class="btn btn-ghost" style="margin-left:10px">Was ist drin?</a>
+    </div>
+  </div>
+</section>
+
+<section id="inhalt">
+  <div class="wrap">
+    <h2 style="text-align:center">Was diese Vorlage kann</h2>
+    <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto 40px">Kein Wischiwaschi-Antrag. Sondern ein juristisch durchdachtes System zur Wiederherstellung deiner Kontrolle.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="icon">📋</div>
+        <h3>Zwei fertige Anträge</h3>
+        <p>Jugendamt (Art. 15 DSGVO + § 83 SGB X) und Gericht (§ 13 FamFG). Ausfüllen, abschicken, durchsetzen.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Pro-Level Strategie</h3>
+        <p>Metadaten fordern, E-Mails an Gutachter offenlegen, Versionen vergleichen. Die Tricks, die wirklich ALLES ans Licht bringen.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⏱️</div>
+        <h3>Fristenlogik eingebaut</h3>
+        <p>14 Tage Zielmarke, 1 Monat gesetzlich, dann Eskalation. Du weißt genau, wann du nachfassen musst.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>Analyse nach Erhalt</h3>
+        <p>Rot-Gelb-Grün-System: Welche Stellen sind wertend, falsch, angreifbar? Die Basis für Gegendarstellung und Rügen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">Was EXAKT angefordert wird</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:30px">Präzision ist deine Waffe. Was nicht benannt ist, wird "vergessen".</p>
+
+    <ul class="checklist">
+      <li>Berichte & Stellungnahmen (Bedarfs-, Hilfeplan-, Schlussbericht)</li>
+      <li>Vermerke, Notizen, Gesprächsprotokolle mit Datum & Teilnehmern</li>
+      <li>Sämtliche E-Mails (Ein- und Ausgang), auch an externe Stellen</li>
+      <li>Telefonvermerke mit Anrufer & vollständigem Inhalt</li>
+      <li>Entwürfe & Versionen von Berichten (zeigen Änderungen!)</li>
+      <li>Gutachter-Kommunikation (Beauftragung, Rückmeldungen)</li>
+      <li>Metadaten: Änderungsdatum, Versionen, Empfängerlisten</li>
+      <li>E-Akte vollständig inkl. aller Anlagen und Anhänge</li>
+    </ul>
+
+    <div class="strategy-box">
+      <div class="label">⚡ PRO-TIPP</div>
+      <p style="color:var(--muted);font-size:15px">Schwärzungen MÜSSEN einzeln begründet werden. "Kindswohl" als Pauschalausrede akzeptierst du nicht. Jede geschwärzte Stelle: konkrete Normbenennung verlangen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center">Timing & Strategie</h2>
+    <div class="grid2" style="margin-top:30px">
+      <div class="card">
+        <h3>🟢 Sofort</h3>
+        <p>Nach neuem Bericht, Gespräch oder Termin beim Jugendamt. Je frischer, desto vollständiger.</p>
+      </div>
+      <div class="card">
+        <h3>🟡 3-4 Wochen vor Gericht</h3>
+        <p>Puffer zur Auswertung und Gegendarstellung. Wer die Akte kennt, kann nicht überrumpelt werden.</p>
+      </div>
+      <div class="card">
+        <h3>🟠 Nach Gutachten</h3>
+        <p>Durchleuchte die Kommunikation zwischen Gutachter und Amt. Was wurde gefragt? Was wurde weggelassen?</p>
+      </div>
+      <div class="card">
+        <h3>🔴 Bei Manipulationsverdacht</h3>
+        <p>Sofortmaßnahme zur Dokumentation. Sichere Beweise, bevor sie "verschwinden".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">FAQ</h2>
+    <div class="faq" style="max-width:700px;margin:30px auto 0">
+      <details>
+        <summary>Muss das Jugendamt wirklich ALLES rausrücken? <span class="chev">▾</span></summary>
+        <p>Ja. Art. 15 DSGVO verpflichtet zur vollständigen Auskunft über alle personenbezogenen Daten — inklusive Kopien. Einschränkungen nur bei überwiegenden Rechten Dritter oder konkretem Kindswohl-Risiko. Und selbst dann: JEDE Schwärzung muss einzeln begründet werden.</p>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zu einem einfachen Antrag? <span class="chev">▾</span></summary>
+        <p>Ein einfacher Antrag fordert "Einsicht in die Akte". Die Behörde sucht sich raus, was sie zeigen will. Diese PRO-Vorlage benennt jede einzelne Dokumentenkategorie EXPLIZIT — E-Mails, Entwürfe, Metadaten, Anhänge. Was nicht benannt ist, existiert für die Behörde nicht.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert es? <span class="chev">▾</span></summary>
+        <p>Gesetzliche Frist: 1 Monat (Art. 12 Abs. 3 DSGVO). Die Vorlage setzt eine interne Zielmarke von 14 Tagen und enthält die Eskalationslogik für den Fall der Fristüberschreitung.</p>
+      </details>
+      <details>
+        <summary>Kann ich das ohne Anwalt nutzen? <span class="chev">▾</span></summary>
+        <p>Absolut. Die Vorlage ist für die Selbstvertretung konzipiert. Juristisch sauber formuliert, aber in verständlichem Deutsch. Trotzdem: Bei komplexen Fällen kann ein Anwalt sinnvoll sein. Die Vorlage ersetzt keine Rechtsberatung.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Bereit für Transparenz?</h2>
+      <p>Eine Vorlage. Zwei Anträge. Die komplette Strategie. Sofort-Download.</p>
+      <div class="price">9,95€</div>
+      <div class="price-note" style="margin-bottom:20px">14 Tage Geld-zurück. Ohne Wenn und Aber.</div>
+      <a href="pdf/akteneinsicht.pdf" class="btn btn-primary" download>
+        📥 Jetzt herunterladen
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="disclaimer">
+    <strong>⚠️ Keine Rechtsberatung.</strong> Ich bin kein Anwalt. Diese Vorlage ersetzt keine individuelle rechtliche Beratung. Für deinen konkreten Fall wende dich an einen Fachanwalt für Familienrecht.
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <p style="margin-top:14px;color:var(--muted2)">© Rebell mit Herz</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elternschutzpaket — Rebell mit Herz</title>
+<meta name="description" content="Das Komplettpaket für Eltern im Kontakt mit Jugendamt, Gericht und Gutachten. Strategie, Mustersätze, Notfallplan — alles, was du brauchst.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0f12;--bg2:#0a0d10;--surface:#14181d;--surface2:#181d23;--border:#252c34;--text:#e9edf0;--muted:#9aa3ac;--muted2:#6f7882;--accent:#3fcf8e;--accent-hover:#34b87d;--accent-ink:#07120c;--danger:#e0556a;--radius:14px;--maxw:950px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--accent)}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.15}
+  h1{font-size:clamp(30px,5vw,46px);font-weight:800}
+  h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;margin-bottom:14px}
+  h3{font-size:17px;font-weight:600;margin-bottom:6px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:12px;transition:.18s;cursor:pointer;border:none;text-decoration:none}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:transparent}.btn-ghost:hover{border-color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(12,15,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:700;font-size:18px}.logo span{color:var(--accent)}
+
+  .hero{padding:70px 0 50px;text-align:center;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:650px;height:650px;background:radial-gradient(circle,rgba(63,207,142,.10),transparent 60%);pointer-events:none}
+  .hero .badge{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(63,207,142,.10);border:1px solid rgba(63,207,142,.25);padding:6px 14px;border-radius:999px;margin-bottom:20px;position:relative}
+  .hero h1{max-width:700px;margin:0 auto 16px;position:relative}
+  .hero .sub{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto 26px;position:relative}
+  .price{font-size:30px;font-weight:700;margin:8px 0 2px}
+  .price-old{text-decoration:line-through;color:var(--muted2);font-size:20px;margin-right:10px}
+  .price-note{font-size:14px;color:var(--muted2)}
+
+  section{padding:56px 0}
+  .band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+  .card .icon{font-size:26px;margin-bottom:10px}
+  .card h3{font-size:16px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .module-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:550px){.module-list{grid-template-columns:1fr}}
+  .module-list li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;font-size:14.5px;display:flex;align-items:center;gap:10px}
+  .module-list .check{color:var(--accent);font-weight:700}
+
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 20px;margin-bottom:10px}
+  .faq details[open]{border-color:var(--accent)}
+  .faq summary{cursor:pointer;font-weight:600;font-size:15.5px;padding:15px 0;display:flex;justify-content:space-between;align-items:center;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .chev{color:var(--accent);transition:.2s;font-size:18px}
+  .faq details[open] summary .chev{transform:rotate(180deg)}
+  .faq details p{color:var(--muted);font-size:14.5px;padding:0 0 16px}
+
+  .cta-section{text-align:center;padding:50px 0}
+  .cta-card{background:linear-gradient(135deg,var(--surface2),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;max-width:600px;margin:0 auto}
+  .cta-card p{color:var(--muted);margin-bottom:18px}
+
+  .disclaimer{background:rgba(224,85,106,.08);border:1px solid rgba(224,85,106,.25);border-radius:var(--radius);padding:16px 20px;margin:28px 0;font-size:13.5px;color:var(--muted)}
+  .disclaimer strong{color:var(--danger)}
+
+  .bonus{background:rgba(63,207,142,.06);border:1px solid rgba(63,207,142,.2);border-radius:var(--radius);padding:18px 22px;margin:16px 0}
+  .bonus .label{color:var(--accent);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;font-size:14px;color:var(--muted2)}
+  footer a{color:var(--muted);margin:0 12px}
+
+  @media print{body{background:white;color:black}.btn{display:none}.hero:before{display:none}.band{background:#f5f5f5;border-color:#ddd}.card,.bonus,.cta-card,.module-list li{background:white;border:1px solid #ddd}header,footer,.disclaimer{display:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav"><a href="index.html" class="logo">Rebell <span>mit Herz</span></a><a href="#download" class="btn btn-primary" style="padding:10px 18px;font-size:13px">Zum Paket</a></div></header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge">Komplettpaket</div>
+    <h1>Das System vor dem System schützen.</h1>
+    <p class="sub">Die meisten Eltern verlieren nicht wegen Gesetzen — sondern weil sie emotional reagieren, falsch kommunizieren und keine Dokumentation haben. Dieses Paket ändert das.</p>
+    <p><span class="price-old">47€</span> <span class="price" style="display:inline">27€</span></p>
+    <div class="price-note">Komplettpaket: Leitfaden + Graphik + Audio. 14 Tage Geld-zurück.</div>
+    <div style="margin-top:18px">
+      <a href="#download" class="btn btn-primary">Elternschutzpaket sichern →</a>
+      <a href="#inhalt" class="btn btn-ghost" style="margin-left:8px">Was ist drin?</a>
+    </div>
+  </div>
+</section>
+
+<section id="inhalt">
+  <div class="wrap">
+    <h2 style="text-align:center">Alles, was du bekommst</h2>
+    <div class="grid3" style="margin-top:30px">
+      <div class="card"><div class="icon">🧭</div><h3>Eltern-Master-Kompass</h3><p>Strategie für Jugendamt, Gericht & Gutachten. Systemdynamiken verstehen und souverän navigieren.</p></div>
+      <div class="card"><div class="icon">🚨</div><h3>Notfallplan 24h</h3><p>Was du in den ersten 24 Stunden tun musst. Schritt für Schritt. Keine Panik, klarer Kopf.</p></div>
+      <div class="card"><div class="icon">💬</div><h3>Mustersätze</h3><p>Für jede kritische Situation: Jugendamt, Gericht, Gutachter, Manipulation. Kurz, klar, unangreifbar.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Beweis-Matrix</h3><p>Was du sichern musst, wie du es strukturierst. Lückenlose Dokumentation für Akten und Verfahren.</p></div>
+      <div class="card"><div class="icon">📡</div><h3>Kommunikations-Strategie</h3><p>Ruhige, sachliche Kommunikation. Keine emotionalen Fehler. Klare Struktur in jeder Situation.</p></div>
+      <div class="card"><div class="icon">⚠️</div><h3>10 gefährlichste Fehler</h3><p>Spontane Antworten, emotionale Nachrichten, fehlende Dokumentation — und wie du sie vermeidest.</p></div>
+    </div>
+
+    <h2 style="text-align:center;margin-top:50px">Enthaltene Module</h2>
+    <ul class="module-list" style="margin-top:20px">
+      <li><span class="check">✓</span> Akteneinsicht</li>
+      <li><span class="check">✓</span> Beschluss durchsetzen</li>
+      <li><span class="check">✓</span> Gutachten verstehen</li>
+      <li><span class="check">✓</span> Protokollberichtigung</li>
+      <li><span class="check">✓</span> Umgangsblockade</li>
+      <li><span class="check">✓</span> Jugendamt antworten</li>
+    </ul>
+
+    <div class="bonus" style="margin-top:24px">
+      <div class="label">🎁 Bonus</div>
+      <p style="font-size:14.5px;color:var(--muted)">Visuelle PDF-Übersicht zum Verständnis + 15 Minuten Audio-Erklärung — damit du alles sofort verstehst und anwenden kannst.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">FAQ</h2>
+    <div class="faq" style="max-width:700px;margin:24px auto 0">
+      <details><summary>Was ist der Unterschied zum Einzelkauf? <span class="chev">▾</span></summary><p>Das Paket enthält ALLE Module aufeinander abgestimmt — plus Graphik und Audio. Einzeln würdest du über 120€ zahlen.</p></details>
+      <details><summary>Wie bekomme ich die Inhalte? <span class="chev">▾</span></summary><p>Sofort-Download nach Zahlung. PDF + Graphik + MP3. Kein Account, kein Login, kein Abo.</p></details>
+      <details><summary>Funktioniert das ohne Anwalt? <span class="chev">▾</span></summary><p>Ja — das gesamte Paket ist für die Selbstvertretung konzipiert. Bei komplexen Fällen kann ein Anwalt ergänzend sinnvoll sein.</p></details>
+      <details><summary>Gibt's eine Garantie? <span class="chev">▾</span></summary><p>14 Tage Geld-zurück. Kein Wenn und Aber. Wenn's nicht passt, bekommst du dein Geld zurück.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="wrap"><div class="cta-card">
+    <h2>Nicht kämpfen — führen.</h2>
+    <p>Das komplette System für ruhige, kontrollierte Elternschaft im Verfahren.</p>
+    <p><span class="price-old">47€</span> <span class="price" style="display:inline">27€</span></p>
+    <div class="price-note" style="margin-bottom:18px">14 Tage Geld-zurück.</div>
+    <a href="pdf/elternschutzpaket-komplett.pdf" class="btn btn-primary" download>📥 Paket herunterladen</a>
+  </div></div>
+</section>
+
+<div class="wrap"><div class="disclaimer"><strong>⚠️ Keine Rechtsberatung.</strong> Ich bin kein Anwalt. Dieses Paket ersetzt keine individuelle rechtliche Beratung.</div></div>
+<footer><div class="wrap"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><p style="margin-top:12px">© Rebell mit Herz</p></div></footer>
+</body>
+</html>
