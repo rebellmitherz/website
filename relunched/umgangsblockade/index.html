@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umgangsblockade Leitfaden — Rebell mit Herz</title>
+<meta name="description" content="Umgangsblockade: Was du JETZT tun kannst, ohne es schlimmer zu machen. Leitfaden für Eltern im akuten Kontaktabbruch — mit Formulierungshilfen und Strategie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0f12; --bg2:#0a0d10; --surface:#14181d; --surface2:#181d23;
+    --border:#252c34; --text:#e9edf0; --muted:#9aa3ac; --muted2:#6f7882;
+    --accent:#3fcf8e; --accent-hover:#34b87d; --accent-ink:#07120c;
+    --danger:#e0556a; --warn:#f0a63b;
+    --radius:14px; --maxw:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--accent)}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.15}
+  h1{font-size:clamp(30px,5vw,48px);font-weight:800}
+  h2{font-size:clamp(23px,3.5vw,32px);font-weight:700;margin-bottom:16px}
+  h3{font-size:19px;font-weight:600;margin-bottom:8px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:15px 28px;border-radius:12px;transition:.18s;cursor:pointer;border:none}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(12,15,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:700;font-size:18px}.logo span{color:var(--accent)}
+
+  .hero{padding:70px 0 50px;text-align:center;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(63,207,142,.10),transparent 60%);pointer-events:none}
+  .hero .badge{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warn);background:rgba(240,166,59,.12);border:1px solid rgba(240,166,59,.25);padding:6px 14px;border-radius:999px;margin-bottom:22px;position:relative}
+  .hero h1{max-width:700px;margin:0 auto 18px;position:relative}
+  .hero .sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 28px;position:relative}
+  .hero .price{font-size:28px;font-weight:700;margin:8px 0 4px}
+  .hero .price-note{font-size:14px;color:var(--muted2)}
+
+  section{padding:60px 0}
+  .band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+  .card .icon{font-size:32px;margin-bottom:12px}
+  .card h3{font-size:17px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .danger-box{background:rgba(224,85,106,.06);border:1px solid rgba(224,85,106,.2);border-radius:var(--radius);padding:22px 24px;margin:18px 0}
+  .danger-box .label{color:var(--danger);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .danger-box p{font-size:14.5px;color:var(--muted)}
+
+  .safe-box{background:rgba(63,207,142,.05);border:1px solid rgba(63,207,142,.2);border-radius:var(--radius);padding:22px 24px;margin:18px 0}
+  .safe-box .label{color:var(--accent);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+
+  .phrase-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:600px){.phrase-grid{grid-template-columns:1fr}}
+  .phrase-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;font-size:14.5px;color:var(--muted)}
+  .phrase-card .bad{color:var(--danger);text-decoration:line-through;margin-bottom:6px}
+  .phrase-card .good{color:var(--accent)}
+
+  .steps{list-style:none;padding:0;counter-reset:step}
+  .steps li{counter-increment:step;padding:20px 0 20px 52px;position:relative;border-bottom:1px solid var(--border);color:var(--muted);font-size:15px}
+  .steps li:before{content:counter(step);position:absolute;left:0;top:18px;background:var(--accent);color:var(--accent-ink);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .steps li:last-child{border-bottom:none}
+
+  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 20px;margin-bottom:10px}
+  .faq details[open]{border-color:var(--accent)}
+  .faq summary{cursor:pointer;font-weight:600;font-size:16px;padding:16px 0;display:flex;justify-content:space-between;align-items:center;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .chev{color:var(--accent);transition:.2s}
+  .faq details[open] summary .chev{transform:rotate(180deg)}
+  .faq details p{color:var(--muted);font-size:15px;padding:0 0 18px}
+
+  .cta-section{text-align:center;padding:50px 0 70px}
+  .cta-card{background:linear-gradient(135deg,var(--surface2),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;max-width:600px;margin:0 auto}
+  .cta-card p{color:var(--muted);margin-bottom:20px}
+
+  .disclaimer{background:rgba(224,85,106,.08);border:1px solid rgba(224,85,106,.25);border-radius:var(--radius);padding:18px 22px;margin:32px 0;font-size:14px;color:var(--muted)}
+  .disclaimer strong{color:var(--danger)}
+
+  .quote{background:var(--surface2);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 var(--radius) var(--radius) 0;margin:20px 0;font-style:italic;color:var(--muted);font-size:15px}
+
+  footer{border-top:1px solid var(--border);padding:36px 0;text-align:center;font-size:14px;color:var(--muted2)}
+  footer a{color:var(--muted);margin:0 12px}
+
+  @media print{
+    body{background:white;color:black}
+    .btn{display:none}.hero:before{display:none}
+    .band{background:#f5f5f5;border-color:#ddd}
+    .card,.danger-box,.safe-box,.cta-card,.phrase-card{background:white;border:1px solid #ddd}
+    header,footer,.disclaimer{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Rebell <span>mit Herz</span></a>
+    <a href="#download" class="btn btn-primary" style="padding:10px 20px;font-size:14px">Download</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge">Akut-Hilfe</div>
+    <h1>Dein Kind wird dir vorenthalten.<br>Was jetzt?</h1>
+    <p class="sub">Eine Umgangsblockade ist eine Ausnahmesituation. Viele Eltern reagieren aus Panik — und genau diese Reaktion wird später gegen sie verwendet.</p>
+    <p class="sub">Dieser Leitfaden schützt dich vor den Fehlern, die alles schlimmer machen. Nicht das Ereignis entscheidet — dein Verhalten ab jetzt.</p>
+    <div class="price">9,95€</div>
+    <div class="price-note">Sofort-Download. 14 Tage Geld-zurück.</div>
+    <div style="margin-top:20px">
+      <a href="#download" class="btn btn-primary">Leitfaden herunterladen →</a>
+      <a href="#fehler" class="btn btn-ghost" style="margin-left:10px">Die 3 häufigsten Fehler</a>
+    </div>
+  </div>
+</section>
+
+<section id="fehler">
+  <div class="wrap">
+    <h2 style="text-align:center">Die 3 häufigsten Fehler — aus Stress</h2>
+    <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto 30px">Keiner dieser Fehler entsteht aus böser Absicht. Sie sind Ausdruck von Überforderung. Trotzdem werden sie gegen dich verwendet.</p>
+
+    <div class="grid3">
+      <div class="danger-box">
+        <div class="label">Fehler 1</div>
+        <h3 style="color:var(--danger);margin-top:4px">Zu viel erklären</h3>
+        <p>Lange Nachrichten, emotionale Rechtfertigungen — sie wirken wie Instabilität. Alles, was du jetzt schreibst, muss später vorlesbar sein. Ohne Erklärungen.</p>
+      </div>
+      <div class="danger-box">
+        <div class="label">Fehler 2</div>
+        <h3 style="color:var(--danger);margin-top:4px">Druck oder Eskalation</h3>
+        <p>Forderungen, Vorwürfe, Drohungen — kurzfristig befreiend, langfristig zerstörerisch. Sie beschädigen deine Kooperationsbereitschaft in den Akten.</p>
+      </div>
+      <div class="danger-box">
+        <div class="label">Fehler 3</div>
+        <h3 style="color:var(--danger);margin-top:4px">Nichts tun</h3>
+        <p>Komplette Passivität. Wenn keine eigene Darstellung existiert, steht in den Akten nur die Sicht der Gegenseite. Schweigen wird als Zustimmung interpretiert.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      In vielen Verfahren gewinnt nicht der stärkste Anspruch — sondern die stabilste Haltung. Nicht alles liegt in deiner Hand. Aber dein Verhalten schon.
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">Die ersten 72 Stunden</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:30px">Was jetzt zählt — und was dir schadet.</p>
+
+    <div class="grid2">
+      <div class="safe-box">
+        <div class="label">✅ Das tust du</div>
+        <p style="font-size:15px">Ruhe bewahren. Sachlich bleiben. Kurze, dokumentierbare Kommunikation. Jede Handlung bewusst setzen.</p>
+      </div>
+      <div class="danger-box">
+        <div class="label">❌ Das tust du NICHT</div>
+        <p style="font-size:15px">Lange Nachrichten. Emotionale Appelle. Rechtfertigungen. Vorwürfe oder Drohungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center">Sichere Sprache in der Krise</h2>
+    <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto 30px">Weniger Worte = mehr Schutz. Diese Formulierungen kannst du JETZT verwenden.</p>
+
+    <div class="phrase-grid">
+      <div class="phrase-card">
+        <p class="good">"Ich bitte um eine kurze schriftliche Rückmeldung zum aktuellen Stand."</p>
+      </div>
+      <div class="phrase-card">
+        <p class="good">"Ich halte fest, dass der Umgang aktuell nicht stattfindet."</p>
+      </div>
+      <div class="phrase-card">
+        <p class="good">"Ich bin weiterhin an einer kooperativen Lösung interessiert."</p>
+      </div>
+      <div class="phrase-card">
+        <p class="good">"Bitte teile mir mit, wie der weitere Ablauf vorgesehen ist."</p>
+      </div>
+      <div class="phrase-card">
+        <p class="good">"Ich stehe für eine sachliche Klärung zur Verfügung."</p>
+      </div>
+      <div class="phrase-card">
+        <p class="good">"Ich bin offen für konstruktive Gespräche."</p>
+      </div>
+    </div>
+
+    <div class="strategy-box" style="background:var(--surface2);border:1px solid var(--accent);border-radius:var(--radius);padding:22px 24px;margin-top:22px">
+      <div class="label" style="color:var(--accent);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em">💡 GRUNDREGEL</div>
+      <p style="color:var(--muted);font-size:15px;margin-top:6px">Keine Erklärungen. Keine Rechtfertigungen. Keine emotionalen Ergänzungen zu diesen Sätzen. Kurz, sachlich, ohne Bewertung — das schützt dich.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">Dokumentation — Fakten, nicht Gefühle</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:24px">Was du festhältst, wie du es festhältst.</p>
+
+    <div class="grid2">
+      <div class="safe-box">
+        <div class="label">📝 Das dokumentierst du</div>
+        <ul style="list-style:none;padding:0;font-size:14.5px;color:var(--muted)">
+          <li style="padding:4px 0">✓ Datum und Uhrzeit</li>
+          <li style="padding:4px 0">✓ Beteiligte Personen</li>
+          <li style="padding:4px 0">✓ Konkreter Ablauf</li>
+          <li style="padding:4px 0">✓ Wörtliche Aussagen (relevant)</li>
+        </ul>
+      </div>
+      <div class="danger-box">
+        <div class="label">🚫 Das dokumentierst du NICHT</div>
+        <ul style="list-style:none;padding:0;font-size:14.5px;color:var(--muted)">
+          <li style="padding:4px 0">✗ Vermutungen</li>
+          <li style="padding:4px 0">✗ Motive</li>
+          <li style="padding:4px 0">✗ Bewertungen</li>
+          <li style="padding:4px 0">✗ Emotionale Einschätzungen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote" style="margin-top:20px">
+      "Am 14.06. wurde der Umgang abgesagt. Begründung: ‚Das Kind möchte aktuell keinen Kontakt.'"<br>
+      <span style="font-size:13px;font-style:normal;color:var(--muted2)">Je nüchterner die Dokumentation, desto stärker ihre Wirkung.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center">Drei Wege nach vorn</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:30px">Erst stabil bleiben. Dann weitergehen. Nicht umgekehrt.</p>
+
+    <ol class="steps">
+      <li><strong style="color:var(--text)">Fundament stärken.</strong> Klare Botschaft definieren. Gespräche vorbereiten. Saubere Kommunikation etablieren.</li>
+      <li><strong style="color:var(--text)">Ordnung in die Unterlagen.</strong> Akteneinsicht beantragen. Chronologie erstellen. Gezielte Vorlagen nutzen.</li>
+      <li><strong style="color:var(--text)">Weiter ruhig bleiben.</strong> Nicht eskalieren. Nichts erzwingen. Konsequent sachlich bleiben.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 style="text-align:center">FAQ</h2>
+    <div class="faq" style="max-width:700px;margin:30px auto 0">
+      <details>
+        <summary>Was mache ich, wenn das Jugendamt nicht reagiert? <span class="chev">▾</span></summary>
+        <p>Frist setzen, nachfassen, dokumentieren. Der Leitfaden enthält die genaue Eskalationslogik. Nichts dem Zufall überlassen.</p>
+      </details>
+      <details>
+        <summary>Darf ich mein Kind trotz Blockade sehen? <span class="chev">▾</span></summary>
+        <p>Rechtlich ja — aber eigenmächtige Abholungen sind das Letzte, was du tun solltest. Das wird als Kindeswohlgefährdung ausgelegt und zerstört deine Position komplett. Der Leitfaden zeigt den sauberen Weg.</p>
+      </details>
+      <details>
+        <summary>Hilft mir das auch ohne Anwalt? <span class="chev">▾</span></summary>
+        <p>Ja. Der Leitfaden ist für die Selbsthilfe konzipiert. Verständlich, praktisch, ohne Juristendeutsch. Bei komplexen Fällen: Hol dir zusätzlich einen Anwalt.</p>
+      </details>
+      <details>
+        <summary>Ist das nur für Väter? <span class="chev">▾</span></summary>
+        <p>Nein. Für alle betroffenen Eltern — Mütter wie Väter. Umgangsblockade trifft beide Seiten, und die Strategie funktioniert unabhängig vom Geschlecht.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Nicht das Ereignis entscheidet — dein Verhalten ab jetzt.</h2>
+      <p>Der Leitfaden für die ersten 72 Stunden und den Weg zurück zu deinem Kind.</p>
+      <div class="price">9,95€</div>
+      <div class="price-note" style="margin-bottom:18px">14 Tage Geld-zurück.</div>
+      <a href="pdf/umgangsblockade-leitfaden.pdf" class="btn btn-primary" download>
+        📥 Jetzt herunterladen
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="disclaimer">
+    <strong>⚠️ Keine Rechtsberatung.</strong> Ich bin kein Anwalt. Dieser Leitfaden ersetzt keine individuelle rechtliche Beratung. Für deinen konkreten Fall wende dich an einen Fachanwalt für Familienrecht.
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <p style="margin-top:14px;color:var(--muted2)">© Rebell mit Herz</p>
+  </div>
+</footer>
+
+</body>
+</html>
