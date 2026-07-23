@@ -23,11 +23,29 @@
 </main>
 <script>
   (function () {
-    var sessionId = new URLSearchParams(window.location.search).get('session_id');
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id');
+    var next = params.get('next');
+    var nextUrl;
+
     if (!sessionId || !/^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(sessionId)) {
       return;
     }
+
     gtag('event', 'purchase', { transaction_id: sessionId });
+
+    try {
+      nextUrl = new URL(next);
+      if (nextUrl.protocol !== 'https:' || nextUrl.origin !== 'https://website.rebellsystem.com' || nextUrl.username || nextUrl.password) {
+        return;
+      }
+    } catch (error) {
+      return;
+    }
+
+    window.setTimeout(function () {
+      window.location.assign(nextUrl.href);
+    }, 800);
   }());
 </script>
 </body>
