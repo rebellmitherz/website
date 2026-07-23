@@ -188,5 +188,39 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
   </div>
 </footer>
 <div class="sticky-mobile"><a class="btn btn-primary btn-wide" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-antwort">Vorlage für 9,95 € holen</a></div>
+<script>
+  (function () {
+    var checkoutButtons = document.querySelectorAll('a[data-product][href^="https://buy.stripe.com/"]');
+    var product = {
+      item_id: '6oUcN78cs3jr8Hy8iZ8og0b',
+      item_name: 'Jugendamt Antwort',
+      price: 9.95,
+      currency: 'EUR'
+    };
+
+    checkoutButtons.forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+          return;
+        }
+
+        event.preventDefault();
+        var destination = button.href;
+        var events = {
+          currency: product.currency,
+          value: product.price,
+          items: [product]
+        };
+
+        gtag('event', 'select_item', { items: [product] });
+        gtag('event', 'begin_checkout', Object.assign({}, events, {
+          event_callback: function () { window.location.assign(destination); },
+          event_timeout: 500
+        }));
+        window.setTimeout(function () { window.location.assign(destination); }, 600);
+      });
+    });
+  }());
+</script>
 </body>
 </html>
