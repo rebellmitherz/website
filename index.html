@@ -44,6 +44,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
 .trustline{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:13px;margin-top:12px}
 .trustline span{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03)}
 .stripe-note{font-size:13px;color:var(--muted);margin:10px 0 0}
+.urgency-wrap{display:flex;align-items:center;gap:10px;margin:10px 0 14px;padding:10px 14px;background:rgba(240,179,90,.08);border:1px solid rgba(240,179,90,.25);border-radius:12px}
+.urgency-icon{flex:none;font-size:20px;line-height:1;animation:pulse-amber 1.8s ease-in-out infinite}
+@keyframes pulse-amber{0%,100%{opacity:1}50%{opacity:.4}}
+.urgency-label{font-size:12px;color:var(--amber);font-weight:600;text-transform:uppercase;letter-spacing:.05em;line-height:1.2}
+.urgency-timer{font-size:30px;font-weight:800;letter-spacing:.04em;color:var(--amber);font-variant-numeric:tabular-nums;line-height:1;margin-left:auto}
+.urgency-timer.faded{opacity:.4}
+@media(max-width:430px){.urgency-timer{font-size:26px}.urgency-wrap{padding:8px 12px}}
 .portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:var(--shadow)}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
 .portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:14px;color:var(--soft)}
@@ -103,6 +110,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
         <h1>Antwort an das Jugendamt – ruhig, klar und dokumentiert.</h1>
         <p class="lead">Praxispaket für Eltern im Kontakt mit dem Jugendamt: 8 Antwortvorlagen, Formulierungshilfen, Gesprächs-Spickzettel und Dokumentationsprotokoll.</p>
         <div class="pricebox"><span class="price">9,95&nbsp;€ <small>· einmalig</small></span></div>
+        <div class="urgency-wrap" id="countdown-hero">
+          <span class="urgency-icon">⏳</span>
+          <div>
+            <div class="urgency-label">Nur noch 24h zum Aktionspreis</div>
+            <div class="urgency-timer" id="timer-hero">24:00:00</div>
+          </div>
+        </div>
         <a class="btn btn-primary" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a>
         <p class="stripe-note">Sichere Zahlung über Stripe.</p>
         <div class="trustline"><span>8 Antwortvorlagen</span><span>Formulierungshilfen</span><span>Gesprächs-Spickzettel</span><span>Dokumentationsprotokoll</span></div>
@@ -180,6 +194,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
     <div class="wrap final">
       <h2>Antwort an das Jugendamt – ruhig, klar, dokumentiert.</h2>
       <div class="price">9,95&nbsp;€ <small>· einmalig</small></div>
+      <div class="urgency-wrap" style="margin:10px auto 14px;max-width:400px;justify-content:center" id="countdown-final">
+        <span class="urgency-icon">⏳</span>
+        <div>
+          <div class="urgency-label">Nur noch 24h zum Aktionspreis</div>
+          <div class="urgency-timer" id="timer-final">24:00:00</div>
+        </div>
+      </div>
       <div><a class="btn btn-primary" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a></div>
       <p class="stripe-note">8 Antwortvorlagen · Formulierungshilfen · Gesprächs-Spickzettel · Dokumentationsprotokoll</p>
     </div>
@@ -191,7 +212,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
     <p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p>
   </div>
 </footer>
-<div class="sticky-mobile"><a class="btn btn-primary btn-wide" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a></div>
+<div class="sticky-mobile">
+  <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">
+    <span style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%">
+      <span>Praxispaket 9,95 €</span>
+      <span style="font-size:12px;opacity:.7;font-weight:600">⏳ <span id="timer-mobile">24:00:00</span></span>
+    </span>
+  </a>
+</div>
 <script>
   (function () {
     var checkoutButtons = document.querySelectorAll('a[data-product][href^="https://buy.stripe.com/"]');
@@ -224,7 +252,32 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
         window.setTimeout(function () { window.location.assign(destination); }, 600);
       });
     });
-  }());
+
+    // === Countdown: 24h ab jetzt ===
+    (function(){
+      var end = new Date().getTime() + 24 * 60 * 60 * 1000;
+      function tick(){
+        var now = new Date().getTime();
+        var diff = end - now;
+        if(diff <= 0){
+          document.querySelectorAll('.urgency-timer, #timer-mobile').forEach(function(el){ el.textContent = '00:00:00'; el.classList.add('faded'); });
+          document.querySelectorAll('.urgency-label').forEach(function(el){ el.textContent = 'Aktion abgelaufen'; });
+          return;
+        }
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        var str = (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+        document.getElementById('timer-hero').textContent = str;
+        var tf = document.getElementById('timer-final');
+        if(tf) tf.textContent = str;
+        var tm = document.getElementById('timer-mobile');
+        if(tm) tm.textContent = str;
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  })();
 </script>
 </body>
 </html>
