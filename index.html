@@ -44,7 +44,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
 .trustline{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:13px;margin-top:12px}
 .trustline span{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.03)}
 .stripe-note{font-size:13px;color:var(--muted);margin:10px 0 0}
-/* Urgency-Countdown-CSS entfernt laut Task-Card */
+
 .portrait{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:var(--shadow)}
 .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
 .portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:14px;color:var(--soft)}
@@ -103,9 +103,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
         <span class="eyebrow">Praxispaket · Sofort nutzbar</span>
         <h1>Antwort an das Jugendamt – ruhig, klar und dokumentiert.</h1>
         <p class="lead">Post vom Jugendamt im Briefkasten – und du weißt nicht, was du schreiben sollst, ohne alles schlimmer zu machen?</p>
+        <p class="lead" style="margin-top:-8px">Praxispaket für Eltern im Kontakt mit dem Jugendamt: 8 Antwortvorlagen, Formulierungshilfen, Gesprächs-Spickzettel und Dokumentationsprotokoll.</p>
         <div class="pricebox"><span class="price">9,95&nbsp;€ <small>· einmalig</small></span></div>
         <p style="font-size:14px;color:var(--muted);margin:-2px 0 14px">Weniger als eine anwaltliche Erstberatung – und sofort nutzbar.</p>
-        <!-- Countdown entfernt laut Task-Card -->
         <a class="btn btn-primary" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a>
         <p style="font-size:13px;color:var(--muted);margin:8px 0 0;text-align:center">Von @rebell_mit_herz – über 32.700 Follower auf TikTok.</p>
         <p class="stripe-note">Sichere Zahlung über Stripe.</p>
@@ -185,7 +185,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
     <div class="wrap final">
       <h2>Antwort an das Jugendamt – ruhig, klar, dokumentiert.</h2>
       <div class="price">9,95&nbsp;€ <small>· einmalig</small></div>
-      <!-- Countdown entfernt laut Task-Card -->
       <div><a class="btn btn-primary" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a></div>
       <p class="stripe-note">8 Antwortvorlagen · Formulierungshilfen · Gesprächs-Spickzettel · Dokumentationsprotokoll</p>
     </div>
@@ -199,7 +198,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
 </footer>
 <div class="sticky-mobile">
   <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">
-    <span>Praxispaket 9,95 €</span>
+    <span style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%">
+      <span>Praxispaket 9,95 €</span>
+    </span>
   </a>
 </div>
 <script>
@@ -235,7 +236,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--green2);outline-off
       });
     });
 
-    // Countdown entfernt laut Task-Card
   })();
 </script>
 </body>
