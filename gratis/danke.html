@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTG3V4SS14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTG3V4SS14');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Fast geschafft – Rebell mit Herz</title>
+<link rel="stylesheet" href="../assets/funnel.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><a class="logo" href="../">Rebell <span>mit Herz</span></a></div></header>
+<main class="wrap">
+  <span class="eyebrow">Letzter Schritt: bestätigen</span>
+  <h1>Fast geschafft. Schau jetzt in dein Postfach.</h1>
+  <p class="lead">Ich habe dir eine Mail geschickt. Klick dort auf „Bestätigen“ – danach kommt das PDF mit den 5 Sätzen. Nichts da? Schau im Spam- oder Werbung-Ordner nach.</p>
+
+  <div class="card accent">
+    <span class="eyebrow">Wenn du gerade ein Schreiben vor dir hast</span>
+    <h2 style="margin-top:14px">Praxispaket „Antwort an das Jugendamt“</h2>
+    <p class="muted">Die 5 Sätze zeigen dir, was du weglässt. Das Praxispaket gibt dir die ganze Antwort: fertige Vorlagen für die Situationen, die am häufigsten vorkommen.</p>
+    <ul class="checks" style="margin:14px 0 18px">
+      <li>8 Antwortvorlagen: Erstkontakt, Vorwürfe, falsche Tatsachen, Gesprächseinladung, Hausbesuch, Unterlagen-Anforderung, Fristverlängerung, Gesprächsprotokoll</li>
+      <li>Formulierungshilfen und Gesprächs-Spickzettel für den Termin</li>
+      <li>Dokumentationsprotokoll und 60-Sekunden-Check vor dem Absenden</li>
+    </ul>
+    <div class="price">9,95&nbsp;€ <small>· einmalig, kein Abo</small></div>
+    <p class="small" style="margin:6px 0 14px">Eine anwaltliche Erstberatung kostet bis zu 190 € (§&nbsp;34&nbsp;RVG, zzgl. USt.).</p>
+    <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/6oUcN78cs3jr8Hy8iZ8og0b" data-product="jugendamt-praxispaket">Praxispaket für 9,95 € holen</a>
+    <p class="small" style="margin:10px 0 0;text-align:center">Sichere Zahlung über Stripe · PDF sofort nach der Zahlung</p>
+  </div>
+
+
+  <p class="small">Orientierungshilfe, keine Rechtsberatung. Ersetzt keine anwaltliche Prüfung deines Einzelfalls.</p>
+</main>
+<footer class="footer"><div class="wrap"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p></div></footer>
+<script>
+  (function () {
+    var product = { item_id: '6oUcN78cs3jr8Hy8iZ8og0b', item_name: 'Jugendamt Praxispaket', price: 9.95, currency: 'EUR' };
+    document.querySelectorAll('a[data-product][href^="https://buy.stripe.com/"]').forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) { return; }
+        event.preventDefault();
+        var destination = button.href;
+        gtag('event', 'begin_checkout', { currency: 'EUR', value: product.price, items: [product], checkout_source: 'lead_magnet_danke',
+          event_callback: function () { window.location.assign(destination); }, event_timeout: 500 });
+        window.setTimeout(function () { window.location.assign(destination); }, 600);
+      });
+    });
+  }());
+</script>
+</body>
+</html>

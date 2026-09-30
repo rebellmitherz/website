@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTG3V4SS14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTG3V4SS14');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Ein Schritt weiter: Das Elternschutzpaket PRO | Rebell mit Herz</title>
+<link rel="stylesheet" href="../assets/funnel.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><a class="logo" href="../">Rebell <span>mit Herz</span></a></div></header>
+<main class="wrap">
+  <div class="card accent" style="margin-top:0">
+    <p style="margin:0 0 10px"><strong>Danke für deinen Kauf.</strong> Dein Praxispaket „Antwort an das Jugendamt“ liegt bereit.</p>
+    <a class="btn btn-ghost btn-wide" href="../zugang/ab7f2k9m4q-vorlage-jugendamt.html" target="_blank" rel="noopener">Praxispaket jetzt herunterladen</a>
+  </div>
+
+  <h1>Ein Schritt weiter: Das Elternschutzpaket PRO</h1>
+  <p class="lead">Du hast gerade das Praxispaket „Antwort an das Jugendamt“ gekauft — die Antwort auf das eine Schreiben. Das Elternschutzpaket PRO ist das Handbuch für alles, was danach kommt.</p>
+
+  <h2>Was drin ist</h2>
+  <ul class="checks">
+    <li><span><strong>58 Seiten, 11 Kapitel</strong> — vom ersten Brief bis zum Eilverfahren: ruhig bleiben und dokumentieren, Akteneinsicht, Protokoll berichtigen, Gutachten begleiten, Umgangsblockade, Beschlüsse durchsetzen, Beschleunigung und Eilverfahren</span></li>
+    <li><span><strong>11 Mustervorlagen zum Kopieren</strong> — u. a. Akteneinsicht beim Jugendamt und Gericht, Erinnerung, Berichtigung und Stellungnahme, Protokollberichtigung, Umgangsmitteilung ans Gericht, Beschleunigungsrüge</span></li>
+    <li><span><strong>Checklisten</strong> — 3-Minuten-Check vor jedem Kontakt, Beweis-Matrix und Ablage, Wochenroutine und Fristen</span></li>
+    <li><span><strong>Glossar</strong> der wichtigsten Begriffe und Vorschriften im Überblick</span></li>
+    <li><span><strong>Schnelleinstieg:</strong> Du musst nicht vorn anfangen — die Übersicht auf Seite 4 führt dich direkt zu dem Kapitel, das zu deiner Lage passt</span></li>
+  </ul>
+
+  <h2>Für wen das ist</h2>
+  <p class="muted">Für Eltern, die gerade mitten im Verfahren stecken und nicht bei jedem Schreiben wieder von vorn anfangen wollen.</p>
+
+  <div class="card warn">
+    <p><strong>Ehrlicher Hinweis</strong></p>
+    <p class="muted" style="margin:0">Das ist kein Ersatz für einen Anwalt und keine Rechtsberatung — sondern eine allgemeine Orientierungshilfe: was du wann schriftlich festhalten, beantragen und prüfen kannst. Bei laufenden Fristen und in Eilfällen gehört ein Anwalt für Familienrecht dazu.</p>
+  </div>
+
+  <div class="card accent" id="angebot">
+    <div class="price">27&nbsp;€ <small>· einmalig</small></div>
+    <p class="muted" id="preisbox-text" style="margin:8px 0 16px">Du wirst zur sicheren Zahlung bei Stripe weitergeleitet. Das PDF kommt sofort nach der Zahlung.</p>
+    <a class="btn btn-primary btn-wide" id="upsell-yes" href="#STRIPE_LINK_27" data-product="elternschutzpaket-pro">Ja, Paket für 27 € hinzufügen</a>
+    <a class="textlink" id="upsell-no" href="../zugang/ab7f2k9m4q-vorlage-jugendamt.html">Nein danke, ich brauche nur das Praxispaket</a>
+    <p class="small" style="margin:16px 0 0;text-align:center">Digitale Lieferung als PDF sofort nach Zahlung · 14 Tage Geld-zurück · Allgemeine Information, keine Rechtsberatung</p>
+  </div>
+</main>
+<footer class="footer"><div class="wrap"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p></div></footer>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var sessionId = params.get('session_id');
+    var validSession = sessionId && /^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(sessionId);
+    var base = { item_id: '6oUcN78cs3jr8Hy8iZ8og0b', item_name: 'Jugendamt Praxispaket', price: 9.95, currency: 'EUR' };
+    var upsell = { item_id: 'elternschutzpaket-pro', item_name: 'Elternschutzpaket PRO', price: 27, currency: 'EUR' };
+
+    if (validSession) {
+      gtag('event', 'purchase', { transaction_id: sessionId, currency: 'EUR', value: base.price, items: [base] });
+    }
+    gtag('event', 'view_item', { currency: 'EUR', value: upsell.price, items: [upsell], item_list_name: 'upsell' });
+
+    var yes = document.getElementById('upsell-yes');
+    yes.addEventListener('click', function (event) {
+      if (!/^https:\/\/buy\.stripe\.com\//.test(yes.href)) { return; }
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) { return; }
+      event.preventDefault();
+      var destination = yes.href;
+      gtag('event', 'begin_checkout', { currency: 'EUR', value: upsell.price, items: [upsell], checkout_source: 'upsell',
+        event_callback: function () { window.location.assign(destination); }, event_timeout: 500 });
+      window.setTimeout(function () { window.location.assign(destination); }, 600);
+    });
+    document.getElementById('upsell-no').addEventListener('click', function () {
+      gtag('event', 'upsell_declined', { items: [upsell] });
+    });
+  }());
+</script>
+</body>
+</html>

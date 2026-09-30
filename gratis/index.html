@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTG3V4SS14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LTG3V4SS14');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Sätze, die du dem Jugendamt niemals schreiben solltest – gratis PDF | Rebell mit Herz</title>
+<meta name="description" content="Gratis PDF: 5 Sätze, die du dem Jugendamt niemals schreiben solltest – und was du stattdessen schreibst. Von @rebell_mit_herz. Orientierungshilfe, keine Rechtsberatung.">
+<link rel="canonical" href="https://website.rebellsystem.com/gratis/">
+<link rel="stylesheet" href="../assets/funnel.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><a class="logo" href="../">Rebell <span>mit Herz</span></a></div></header>
+<main class="wrap">
+  <span class="eyebrow">Gratis PDF · 2 Seiten</span>
+  <h1>5 Sätze, die du dem Jugendamt niemals schreiben solltest – und was du stattdessen schreibst.</h1>
+  <p class="lead">Was du dem Jugendamt schreibst, landet in der Akte – und bleibt dort. Diese fünf Sätze tauchen immer wieder auf. Sie machen die Lage selten leichter, oft schwerer.</p>
+
+  <form class="form card" id="lead-form" method="post" action="" novalidate>
+    <p id="form-pending" class="notice" hidden>Formular noch nicht mit MailerLite verbunden.</p>
+    <label for="email">Deine E-Mail-Adresse</label>
+    <input type="email" id="email" name="fields[email]" autocomplete="email" required placeholder="name@beispiel.de">
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <label class="consent"><input type="checkbox" id="consent" required> <span>Ja, schick mir das PDF und in den nächsten Tagen ein paar kurze E-Mails von Rebell mit Herz mit Tipps und Angeboten rund um Jugendamt und Familiengericht. Abmelden geht jederzeit mit einem Klick in jeder Mail. Mehr dazu in der <a href="../datenschutz.html">Datenschutzerklärung</a>.</span></label>
+    <button class="btn btn-primary btn-wide" type="submit">PDF gratis zuschicken</button>
+    <p class="small" id="form-error" role="alert" hidden></p>
+    <p class="small" style="margin:12px 0 0">Du bekommst gleich eine Mail zur Bestätigung. Erst nach deinem Klick dort schicke ich dir das PDF.</p>
+  </form>
+
+  <div class="card">
+    <ul class="checks">
+      <li>5 Sätze, die Eltern in Mails und Briefen ans Jugendamt immer wieder schreiben – und warum sie dir schaden können</li>
+      <li>Für jeden Satz eine ruhige, sachliche Formulierung zum Übernehmen</li>
+      <li>3 Fragen, die du dir vor jedem Absenden stellst</li>
+    </ul>
+  </div>
+
+  <p class="small">Von Emilio · @rebell_mit_herz – über 32.800 Follower auf TikTok.</p>
+  <p class="small">Orientierungshilfe, keine Rechtsberatung. Ersetzt keine anwaltliche Prüfung deines Einzelfalls.</p>
+</main>
+<footer class="footer"><div class="wrap"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p></div></footer>
+<script>
+  (function () {
+    var form = document.getElementById('lead-form');
+    var error = document.getElementById('form-error');
+    var thanks = 'danke.html';
+
+    if (!form.getAttribute('action')) {
+      document.getElementById('form-pending').hidden = false;
+    }
+
+    function fail(msg) {
+      error.textContent = msg;
+      error.hidden = false;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      error.hidden = true;
+      var email = form.querySelector('#email');
+      if (!email.value || !email.checkValidity()) { return fail('Bitte gib eine gültige E-Mail-Adresse ein.'); }
+      if (!form.querySelector('#consent').checked) { return fail('Bitte bestätige kurz, dass du die E-Mails bekommen möchtest.'); }
+      if (!form.getAttribute('action')) { return fail('Das Formular ist gerade nicht erreichbar. Bitte versuch es später noch einmal.'); }
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data && data.success) {
+            gtag('event', 'generate_lead', { lead_source: 'lead_magnet_5_saetze' });
+            window.location.assign(thanks);
+          } else {
+            fail('Das hat nicht geklappt. Bitte prüf deine E-Mail-Adresse und versuch es noch einmal.');
+          }
+        })
+        .catch(function () { form.submit(); });
+    });
+  }());
+</script>
+</body>
+</html>
