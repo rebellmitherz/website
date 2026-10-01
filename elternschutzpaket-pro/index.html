@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTG3V4SS14"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LTG3V4SS14');
-</script>
+<script src="../assets/consent.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
@@ -46,13 +40,13 @@
   <div class="card accent" id="angebot">
     <div class="price">27&nbsp;€ <small>· einmalig</small></div>
     <p class="muted" id="preisbox-text" style="margin:8px 0 16px">Du wirst zur sicheren Zahlung bei Stripe weitergeleitet. Das PDF kommt sofort nach der Zahlung.</p>
-    <a class="btn btn-primary btn-wide" id="upsell-yes" href="#STRIPE_LINK_27" data-product="elternschutzpaket-pro">Ja, Paket für 27 € hinzufügen</a>
+    <a class="btn btn-primary btn-wide" id="upsell-yes" href="https://buy.stripe.com/7sYfZjeAQ4nv5vm8iZ8og0o" data-product="elternschutzpaket-pro">Ja, Paket für 27 € hinzufügen</a>
     <p class="small" id="upsell-soon" style="margin:10px 0 0;text-align:center" hidden>Das Elternschutzpaket PRO ist in Kürze hier bestellbar.</p>
     <a class="textlink" id="upsell-no" href="mailto:emilio@rebellsystem.com?subject=Download%20Praxispaket" target="_blank" rel="noopener">Nein danke, ich brauche nur das Praxispaket</a>
     <p class="small" style="margin:16px 0 0;text-align:center">Digitale Lieferung als PDF sofort nach Zahlung · 14 Tage Geld-zurück · Allgemeine Information, keine Rechtsberatung</p>
   </div>
 </main>
-<footer class="footer"><div class="wrap"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p></div></footer>
+<footer class="footer"><div class="wrap"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a><p>© Rebell mit Herz · Strukturhilfe, keine Rechtsberatung.</p></div></footer>
 <script>
   (function () {
     var params = new URLSearchParams(window.location.search);
