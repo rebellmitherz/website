@@ -38,9 +38,9 @@
   </div>
 
   <div class="card accent" id="angebot">
-    <div class="price">27&nbsp;€ <small>· einmalig</small></div>
+    <div class="price">20&nbsp;€ <small>· einmalig</small></div>
     <p class="muted" id="preisbox-text" style="margin:8px 0 16px">Du wirst zur sicheren Zahlung bei Stripe weitergeleitet. Das PDF kommt sofort nach der Zahlung.</p>
-    <a class="btn btn-primary btn-wide" id="upsell-yes" href="https://buy.stripe.com/7sYfZjeAQ4nv5vm8iZ8og0o" data-product="elternschutzpaket-pro">Ja, Paket für 27 € hinzufügen</a>
+    <a class="btn btn-primary btn-wide" id="upsell-yes" href="https://buy.stripe.com/5kQcN764k07faPG9n38og0z" data-product="elternschutzpaket-pro">Ja, Paket für 20 € hinzufügen</a>
     <p class="small" id="upsell-soon" style="margin:10px 0 0;text-align:center" hidden>Das Elternschutzpaket PRO ist in Kürze hier bestellbar.</p>
     <a class="textlink" id="upsell-no" href="mailto:kontakt@rebellsystem.com?subject=Download%20Praxispaket" target="_blank" rel="noopener">Nein danke, ich brauche nur das Praxispaket</a>
     <p class="small" style="margin:16px 0 0;text-align:center">Digitale Lieferung als PDF sofort nach Zahlung · 14 Tage Geld-zurück · Allgemeine Information, keine Rechtsberatung</p>
@@ -52,8 +52,8 @@
     var params = new URLSearchParams(window.location.search);
     var sessionId = params.get('session_id');
     var validSession = sessionId && /^cs_(?:test_|live_)?[A-Za-z0-9]+$/.test(sessionId);
-    var base = { item_id: '6oUcN78cs3jr8Hy8iZ8og0b', item_name: 'Jugendamt Praxispaket', price: 9.95, currency: 'EUR' };
-    var upsell = { item_id: 'elternschutzpaket-pro', item_name: 'Elternschutzpaket PRO', price: 27, currency: 'EUR' };
+    var base = { item_id: '8x2eVfboE9HPf5War78og0B', item_name: 'Jugendamt Praxispaket', price: 9.70, currency: 'EUR' };
+    var upsell = { item_id: 'elternschutzpaket-pro', item_name: 'Elternschutzpaket PRO', price: 20, currency: 'EUR' };
 
     if (validSession) {
       gtag('event', 'purchase', { transaction_id: sessionId, currency: 'EUR', value: base.price, items: [base] });
